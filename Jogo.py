@@ -1,11 +1,28 @@
 import random
 
 def jogar():
+    print('Olá! Eu sou o Dr. Sheldon Cooper.\n Seja bem vindo' )
+
+    nome = input("Qual seu nome: ")
+
+    resposta_sim = ['sim', 'claro', 'sei', 's', 'logico', 'claro que sei']
+    resposta_nao = ['nao', 'nao sei', 'claro que nao', 'n']
+    resposta = input('Imagino que seja um prazer me conhecer. Hoje jogaremos Pedra, Papel, Tesoura, Lagarto e Spock. Você sabe jogar?: ').lower()
+    if resposta in resposta_sim:
+        print('Isso foi uma surpresa. Então vamos jogar!')
+    elif resposta in resposta_nao:
+        print('Imaginei. Vou te explicar.')
+    else:
+        print('Não estou te entendendo.')
+        
+
+
+
     opcoes = ['pedra', 'papel', 'tesoura', 'lagarto', 'spock']
     pontuacao = {'jogador': 0, 'sheldon': 0}
 
     while True:
-        print(f"\nPontuação atual: Jogador {pontuacao['jogador']} x {pontuacao['sheldon']} Sheldon")
+        print(f"\nPontuação atual: {nome} {pontuacao['jogador']} x {pontuacao['sheldon']} Sheldon")
 
         jogada_jogador = input("Escolha sua jogada (pedra, papel,tesoura,lagarto ou spock): ").lower()
         jogada_computador = random.choice(opcoes)
