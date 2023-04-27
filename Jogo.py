@@ -1,25 +1,26 @@
 import random
 
 def jogar():
+    #DIALOGO
     print('Olá! Eu sou o Dr. Sheldon Cooper.\n Seja bem vindo' )
 
     nome = input("Qual seu nome: ")
 
-    resposta_sim = ['sim', 'claro', 'sei', 's', 'logico', 'claro que sei']
-    resposta_nao = ['nao', 'nao sei', 'claro que nao', 'n']
-    resposta = input('Imagino que seja um prazer me conhecer. Hoje jogaremos Pedra, Papel, Tesoura, Lagarto e Spock. Você sabe jogar?: ').lower()
-    if resposta in resposta_sim:
-        print('Isso foi uma surpresa. Então vamos jogar!')
-    elif resposta in resposta_nao:
-        print('Imaginei. Vou te explicar.')
-    else:
-        print('Não estou te entendendo.')
-        
+     while True:
+        resposta = input('Imagino que seja um prazer me conhecer. Hoje jogaremos Pedra, Papel, Tesoura, Lagarto e Spock. Você sabe jogar?: ')
+        if resposta.lower() in ['sim', 'claro', 'sei', 's', 'lógico', 'claro que sei']:
+            print('Isso foi uma surpresa. Então vamos jogar!')
+            break
+        elif resposta.lower() in ['não', 'não sei', 'claro que não', 'n']:
+            print('Imaginei. Vou te explicar.\n Pedra, papel, tesoura, lagarto, Spock. É muito simples. Olhe – tesoura corta papel, papel cobre pedra, pedra esmaga lagarto, lagarto envenena Spock, Spock esmaga tesoura, tesoura decapita lagarto, lagarto come papel, papel refuta Spock, Spock vaporiza pedra e como sempre, pedra quebra tesoura.' )
+            break
+        else:
+            print('Não estou te entendendo. Vamos começar de novo.')
 
-
-
+    #JOGO
     opcoes = ['pedra', 'papel', 'tesoura', 'lagarto', 'spock']
     pontuacao = {'jogador': 0, 'sheldon': 0}
+
 
     while True:
         print(f"\nPontuação atual: {nome} {pontuacao['jogador']} x {pontuacao['sheldon']} Sheldon")
